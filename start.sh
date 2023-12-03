@@ -85,9 +85,7 @@ start_jupyter
 export_env_vars
 
 source /workspace/Fooocus/fooocus_env/bin/activate
-python /workspace/Fooocus/entry_with_update.py --preset realistic --share &
-
-execute_script "/post_start.sh" "Running post-start script..."
+python /workspace/Fooocus/entry_with_update.py --preset realistic --share
 
 echo "Start script(s) finished, pod is ready to use."
 

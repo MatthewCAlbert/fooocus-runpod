@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL=/bin/bash
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu
 ENV PATH="/workspace/venv/bin:$PATH"
-ENV TORCH_COMMAND="pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
 
 WORKDIR /workspace
 
@@ -35,6 +34,7 @@ RUN apt update --yes && \
     cd Fooocus && \
     python -m venv fooocus_env && \
     source fooocus_env/bin/activate && \
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && \
     pip install -r requirements_versions.txt && \
     apt clean
 
